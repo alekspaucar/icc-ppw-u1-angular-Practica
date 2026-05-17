@@ -1,19 +1,16 @@
-<section class="detail-page">
-  <h1 class="detail-page__title">Detalle del estudiante</h1>
+<section class="flex flex-col gap-5">
 
-  <!--
-    id es una propiedad de la clase, leída con ActivatedRoute.
-    {{ id }} muestra el valor del parámetro :id de la URL.
-  -->
-  <p class="detail-page__id">
+  <h1 class="text-3xl font-bold tracking-tight text-slate-900">Detalle del estudiante</h1>
+
+  <p class="bg-white px-4 py-3 rounded-lg border border-slate-200 border-l-4 border-l-brand text-slate-900">
     ID recibido por la ruta: <strong>{{ id }}</strong>
   </p>
 
-  <!--
-    routerLink="/students" → enlace de retorno al listado.
-    No recarga la página: Angular intercepta el clic y navega internamente.
-  -->
-  <a class="btn-back" routerLink="/student">
+  <a
+    class="inline-block w-fit border-2 border-brand text-brand px-5 py-2 rounded-md no-underline font-medium transition hover:bg-brand hover:text-white"
+    routerLink="/students"
+  >
     ← Volver al listado
   </a>
+
 </section>

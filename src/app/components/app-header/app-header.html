@@ -7,11 +7,7 @@
     routerLink="/" y routerLink="/students" navegan internamente sin recargar.
     Aún no hay indicador visual de cuál está activo.
   -->
-    <nav class="app-header__nav">
-  <!--
-    [routerLinkActiveOptions]="{ exact: true }" → solo activo cuando la URL es exactamente "/".
-    Sin esto, "/" estaría activo también en /students, /profile, etc.
-  -->
+<nav class="app-header__nav">
   <a class="nav-link"
      routerLink="/"
      routerLinkActive="nav-link--active"
@@ -19,11 +15,21 @@
     Inicio
   </a>
 
-  <!-- Estudiantes no necesita exact: "/students" no es prefijo de ninguna otra ruta. -->
   <a class="nav-link"
-     routerLink="/student"
+     routerLink="/students"
      routerLinkActive="nav-link--active">
     Estudiantes
+  </a>
+  <a class="nav-link"
+     routerLink="/students"
+     routerLinkActive="nav-link--active">
+    Estudiantes
+  </a>
+
+  <a class="nav-link"
+     routerLink="/layouts"
+     routerLinkActive="nav-link--active">
+    Layouts
   </a>
 </nav>
 </header>

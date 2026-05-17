@@ -1,0 +1,151 @@
+<section class="space-y-10">
+
+  <header class="space-y-3">
+    <p class="text-sm font-semibold uppercase tracking-[0.3em] text-sky-700">Layouts</p>
+    <h1 class="text-3xl font-bold tracking-tight text-slate-900 md:text-4xl">
+      Distribuciones de layout con Tailwind
+    </h1>
+    <p class="max-w-2xl leading-7 text-slate-600">
+      Cada sección muestra una distribución diferente: grid de columnas, grid con sidebar,
+      y distribuciones flex.
+    </p>
+  </header>
+
+  <article class="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
+    <h2 class="mb-1 text-xl font-semibold text-slate-900">Grid de 4 columnas</h2>
+    <p class="mb-5 text-sm text-slate-500">1 col en móvil → 2 en sm → 4 en lg.</p>
+    <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+      <article class="rounded-2xl bg-linear-to-br from-sky-400 to-blue-600 p-5 shadow-lg text-white">
+        <h3 class="mt-2 text-lg font-semibold">Usuarios activos</h3>
+      </article>
+      <article class="rounded-2xl bg-linear-to-br from-violet-500 to-purple-700 p-5 shadow-lg text-white">
+        <h3 class="mt-2 text-lg font-semibold">Tareas pendientes</h3>
+      </article>
+      <article class="rounded-2xl bg-linear-to-br from-emerald-400 to-teal-600 p-5 shadow-lg text-white">
+        <h3 class="mt-2 text-lg font-semibold">Ingresos</h3>
+      </article>
+      <article class="rounded-2xl bg-linear-to-br from-rose-400 to-pink-600 p-5 shadow-lg text-white">
+        <h3 class="mt-2 text-lg font-semibold">Satisfacción</h3>
+      </article>
+    </div>
+  </article>
+
+  <article class="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
+    <h2 class="mb-1 text-xl font-semibold text-slate-900">Grid con sidebar</h2>
+    <p class="mb-5 text-sm text-slate-500">Columna fija de 240px + área principal flexible.</p>
+    <div class="grid gap-4 lg:grid-cols-[240px_minmax(0,1fr)]">
+      <aside class="rounded-2xl bg-slate-50 border border-slate-200 p-5 shadow-md">
+        <h3 class="mt-2 text-lg font-semibold text-slate-900">Sidebar (Menú)</h3>
+      </aside>
+      <div class="rounded-2xl bg-slate-50 border border-slate-200 p-5 shadow-md">
+        <h3 class="mt-2 text-lg font-semibold text-slate-900">Contenido principal</h3>
+      </div>
+    </div>
+  </article>
+
+  <article class="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
+    <h2 class="mb-1 text-xl font-semibold text-slate-900">Grid de 3 columnas</h2>
+    <p class="mb-5 text-sm text-slate-500">Distribución simétrica sin sombra.</p>
+    <div class="grid gap-6 md:grid-cols-3">
+      <article class="rounded-2xl bg-linear-to-tr from-amber-400 to-orange-500 p-5 text-white">
+        <h3 class="mt-2 text-lg font-semibold">Primero</h3>
+      </article>
+      <article class="rounded-2xl bg-linear-to-tr from-cyan-400 to-sky-600 p-5 text-white">
+        <h3 class="mt-2 text-lg font-semibold">Segundo</h3>
+      </article>
+      <article class="rounded-2xl bg-linear-to-tr from-fuchsia-400 to-pink-600 p-5 text-white">
+        <h3 class="mt-2 text-lg font-semibold">Tercero</h3>
+      </article>
+    </div>
+  </article>
+
+  <article class="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
+    <h2 class="mb-1 text-xl font-semibold text-slate-900">Flex: carrusel horizontal</h2>
+    <p class="mb-5 text-sm text-slate-500">Scroll lateral en pantallas pequeñas.</p>
+    <div class="flex gap-4 overflow-x-auto pb-2">
+      <article class="min-w-[16rem] shrink-0 rounded-2xl bg-linear-to-br from-sky-400 to-blue-600 p-5 shadow-md text-white">
+        <h3 class="mt-2 text-lg font-semibold">Elemento A</h3>
+      </article>
+      <article class="min-w-[16rem] shrink-0 rounded-2xl bg-linear-to-br from-violet-500 to-purple-700 p-5 shadow-md text-white">
+        <h3 class="mt-2 text-lg font-semibold">Elemento B</h3>
+      </article>
+      <article class="min-w-[16rem] shrink-0 rounded-2xl bg-linear-to-br from-emerald-400 to-teal-600 p-5 shadow-md text-white">
+        <h3 class="mt-2 text-lg font-semibold">Elemento C</h3>
+      </article>
+      <article class="min-w-[16rem] shrink-0 rounded-2xl bg-linear-to-br from-rose-400 to-pink-600 p-5 shadow-md text-white">
+        <h3 class="mt-2 text-lg font-semibold">Elemento D</h3>
+      </article>
+    </div>
+  </article>
+
+  <article class="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
+    <h2 class="mb-1 text-xl font-semibold text-slate-900">Flex: wrap con alineación</h2>
+    <p class="mb-5 text-sm text-slate-500">Los cards saltan de fila automáticamente.</p>
+    <div class="flex flex-wrap gap-4 items-start">
+      <article class="w-56 rounded-2xl bg-white p-5 shadow-xl ring-1 ring-slate-200">
+        <h3 class="mt-2 text-lg font-semibold text-slate-900">Card 1</h3>
+      </article>
+      <article class="w-56 rounded-2xl bg-white p-5 shadow-xl ring-1 ring-slate-200">
+        <h3 class="mt-2 text-lg font-semibold text-slate-900">Card 2</h3>
+      </article>
+      <article class="w-56 rounded-2xl bg-white p-5 shadow-xl ring-1 ring-slate-200">
+        <h3 class="mt-2 text-lg font-semibold text-slate-900">Card 3</h3>
+      </article>
+    </div>
+  </article>
+
+  <article class="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
+    <h2 class="mb-1 text-xl font-semibold text-slate-900">Grid Asimétrico Avanzado (Bento Grid)</h2>
+    <p class="mb-5 text-sm text-slate-500">Uso de col-span y row-span para romper simetrías en pantallas grandes.</p>
+
+    <div class="grid grid-cols-1 gap-4 md:grid-cols-3">
+
+      <article class="rounded-2xl bg-linear-to-br from-indigo-500 via-purple-500 to-pink-500 p-6 text-white md:col-span-2 md:row-span-2 shadow-md">
+        <p class="text-xs font-bold uppercase tracking-wider opacity-75">Destacado</p>
+        <h3 class="mt-2 text-2xl font-bold">Análisis de Datos Centralizado</h3>
+        <p class="mt-4 text-sm leading-relaxed opacity-90">
+          Esta tarjeta demuestra la potencia de las rejillas asimétricas estilo Bento. Al expandirse sobre múltiples celdas, captura inmediatamente la atención del usuario. Ideal para gráficos complejos o dashboards de control.
+        </p>
+      </article>
+
+      <article class="rounded-2xl bg-slate-900 p-5 text-white border border-slate-800 shadow-md flex flex-col justify-between">
+        <div>
+          <p class="text-xs font-bold uppercase tracking-wider text-purple-400">Security</p>
+          <h3 class="mt-2 text-lg font-semibold">Firewall Activo</h3>
+        </div>
+        <p class="mt-4 text-xs text-slate-400">Monitoreando paquetes en tiempo real en la subred local.</p>
+      </article>
+
+      <article class="rounded-2xl bg-white p-5 text-slate-900 border border-slate-200 shadow-md">
+        <p class="text-xs font-bold uppercase tracking-wider text-emerald-600">Storage</p>
+        <h3 class="mt-1 text-lg font-semibold">SSD: 89% Libre</h3>
+      </article>
+
+    </div>
+  </article>
+
+  <article class="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
+    <h2 class="mb-1 text-xl font-semibold text-slate-900">Flexbox: Clúster de Perfil Centrado</h2>
+    <p class="mb-5 text-sm text-slate-500">Distribución flex-col con alineación y justificación perfecta de ejes.</p>
+
+    <div class="flex flex-col items-center justify-center rounded-2xl bg-slate-50 border border-slate-200 p-8 text-center max-w-md mx-auto shadow-sm ring-2 ring-slate-200/50">
+
+      <div class="h-20 w-20 rounded-full bg-linear-to-tr from-brand to-sky-400 flex items-center justify-center text-white text-2xl font-bold shadow-md">
+        AV
+      </div>
+
+      <h3 class="mt-4 text-xl font-bold text-slate-900">Alexander Vizhñay</h3>
+      <p class="text-sm font-medium text-brand">Ingeniería en Sistemas</p>
+
+      <p class="mt-3 text-xs leading-5 text-slate-600 max-w-xs">
+        Sección construida para validar el comportamiento atómico de flexbox en orientación de columna vertical, asegurando simetría en bloques tipográficos compactos.
+      </p>
+
+      <div class="mt-5 flex gap-3">
+        <span class="rounded-full bg-white px-3 py-1 text-xs font-semibold text-slate-700 border border-slate-200 shadow-2xs">Angular 21</span>
+        <span class="rounded-full bg-white px-3 py-1 text-xs font-semibold text-slate-700 border border-slate-200 shadow-2xs">Tailwind CSS</span>
+      </div>
+    </div>
+  </article>
+
+</section>
