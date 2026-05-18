@@ -1,20 +1,13 @@
 import { Routes } from '@angular/router';
-import { LayoutsPage } from './features/layouts/pages/layouts-page';
-import { HomePage } from './features/home/pages/home-page/home-page';
+import { HomePage } from './features/home/pages/home-page/home-page'; // <-- Verifica que esta ruta sea la real
 import { StudentPage } from './features/students/pages/student-page/student-page';
 import { StudentDetailPage } from './features/students/pages/student-detail-page/student-detail-page';
+import { LayoutsPage } from './features/layouts/pages/layouts-page';
 
 export const routes: Routes = [
-
-    {path: '',component: LayoutsPage},
-
-    {path: 'home',component: HomePage},
-
-    {path: 'students',component: StudentPage},
-
-    {path: 'students/:id',component: StudentDetailPage},
-
-    // Redireccionamiento
-    {path: '**',redirectTo: ''}
-
+    { path: '', component: HomePage },
+    { path: 'students', component: StudentPage },
+    { path: 'students/:id', component: StudentDetailPage },
+    { path: 'layouts', component: LayoutsPage },
+    { path: '**', redirectTo: '' }
 ];

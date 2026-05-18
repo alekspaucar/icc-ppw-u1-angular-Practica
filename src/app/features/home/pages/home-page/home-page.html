@@ -1,19 +1,19 @@
-<section class="space-y-8">
+<section class="flex flex-col items-center justify-center py-20 bg-white rounded-3xl border border-slate-200 shadow-md max-w-xl mx-auto my-10">
 
-  <app-hero />
+  <h1 class="text-3xl font-bold text-slate-900 mb-2 tracking-tight">
+    ¡Bienvenido al Sistema!
+  </h1>
 
-  <div class="flex justify-center gap-4 py-4">
-    <button class="btn-primary" (click)="goToStudentsPage()">
-      Ver Estudiantes →
-    </button>
+  <p class="text-slate-600 mb-8 text-center px-6 max-w-md leading-6">
+    Gestiona el listado de alumnos y revisa las grillas de distribución espacial usando los accesos directos de la aplicación.
+  </p>
 
-    <button
-        type="button"
-        class="w-fit rounded-md border-2 border-brand bg-transparent px-5 py-2.5 font-medium text-brand transition-colors duration-200 hover:bg-brand hover:text-white cursor-pointer"
-        (click)="goToStudentsPage()"
-    >
-        Ver Estudiantes →
-    </button>
-  </div>
+  <button
+    type="button"
+    class="w-fit rounded-md bg-[#0f4c81] px-6 py-3 font-medium text-white shadow-md hover:bg-[#0b3a66] cursor-pointer transition-colors duration-200"
+    (click)="goToStudentsPage()"
+  >
+    Ver Estudiantes →
+  </button>
 
 </section>
