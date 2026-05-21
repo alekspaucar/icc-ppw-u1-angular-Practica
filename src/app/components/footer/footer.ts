@@ -1,14 +1,10 @@
-import { Component, signal } from '@angular/core';
-import { UpperCasePipe, LowerCasePipe, DecimalPipe } from '@angular/common';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-footer',
-  imports: [UpperCasePipe, LowerCasePipe, DecimalPipe],
+  standalone: true,
+  imports: [],
   templateUrl: './footer.html',
-  styleUrl: './footer.css'
 })
 export class Footer {
-  anio = signal(2026);
-
-  mensaje = signal('programacion web');
 }

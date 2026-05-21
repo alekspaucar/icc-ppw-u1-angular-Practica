@@ -1,36 +1,87 @@
-<header class="app-header">
+<header class="bg-base-100 shadow-sm w-full rounded-md">
+  <div class="navbar px-4">
+    <div class="navbar-start">
+      <div class="dropdown">
+        <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
+          ☰
+        </div>
+        <ul
+          tabindex="0"
+          class="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow"
+        >
+          <li>
+            <a routerLink="/">Inicio</a>
+          </li>
+          <li>
+            <a routerLink="/ui-components">
+              Componentes
+            </a>
+          </li>
+          <li>
+            <details>
+              <summary>Formularios</summary>
+              <ul>
+                <li>
+                  <a routerLink="/signup">
+                    Signup
+                  </a>
+                </li>
+                <li>
+                  <a routerLink="/profile">
+                    Perfil
+                  </a>
+                </li>
+                <li>
+                  <a routerLink="/project-config">
+                    Config Proyecto
+                  </a>
+                </li>
+              </ul>
+            </details>
+          </li>
+        </ul>
+      </div>
+      <a class="btn btn-ghost text-xl" routerLink="/">
+        PPW Angular
+      </a>
+    </div>
 
-  <!-- Título de la app: signal brand transformado a mayúsculas con el pipe -->
-  <span class="app-header__brand">{{ brand() | uppercase }}</span>
-
-  <!--
-    routerLink="/" y routerLink="/students" navegan internamente sin recargar.
-    Aún no hay indicador visual de cuál está activo.
-  -->
-  <nav class="app-header__nav">
-    <a class="nav-link" routerLink="/" routerLinkActive="nav-link--active" [routerLinkActiveOptions]="{ exact: true }">
-      Inicio
-    </a>
-
-    <a class="nav-link" routerLink="/students" routerLinkActive="nav-link--active">
-      Estudiantes
-    </a>
-
-    <a class="nav-link" routerLink="/layouts" routerLinkActive="nav-link--active">
-      Layouts
-    </a>
-
-    <a class="nav-link" routerLink="/singup" routerLinkActive="nav-link--active">
-      Sign up
-    </a>
-
-    <a class="nav-link" routerLink="/profile" routerLinkActive="nav-link--active">
-      Perfil
-    </a>
-
-    <a class="nav-link" routerLink="/project-config" routerLinkActive="nav-link--active">
-      Configurar Proyecto
-    </a>
-  </nav>
-
+    <div class="navbar-center hidden lg:flex">
+      <ul class="menu menu-horizontal px-1">
+        <li>
+          <a routerLink="/">Inicio</a>
+        </li>
+        <li>
+          <a routerLink="/ui-components">
+            Componentes
+          </a>
+        </li>
+        <li>
+          <details>
+            <summary>
+              Formularios
+            </summary>
+            <ul class="p-2 bg-base-100 rounded-box shadow">
+              <li>
+                <a routerLink="/signup">
+                  Signup
+                </a>
+              </li>
+              <li>
+                <a routerLink="/profile">
+                  Perfil
+                </a>
+              </li>
+              <li>
+                <a routerLink="/project-config">
+                  Configurar Proyecto
+                </a>
+              </li>
+            </ul>
+          </details>
+        </li>
+      </ul>
+    </div>
+    <div class="navbar-end"></div>
+  </div>
 </header>

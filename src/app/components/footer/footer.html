@@ -1,9 +1,61 @@
-<footer class="footer">
+<footer class="footer sm:footer-horizontal mt-10 border border-base-200 bg-base-300 p-10 text-base-content shadow-sm">
 
-    <p>{{ mensaje() | uppercase }}</p>
-    <p>{{ mensaje() | lowercase }}</p>
-    <p>{{ anio() | number }}</p>
+  <nav>
+    <h6 class="footer-title">
+      PPW
+    </h6>
 
-    <p>© {{ anio() }} Programación y Plataformas Web</p>
+    <a class="link link-hover">
+      Angular 21
+    </a>
+
+    <a class="link link-hover">
+      TailwindCSS
+    </a>
+
+    <a class="link link-hover">
+      DaisyUI
+    </a>
+  </nav>
+
+  <nav>
+
+    <h6 class="footer-title">
+      Navegación
+    </h6>
+
+    <a class="link link-hover" routerLink="/">
+      Inicio
+    </a>
+
+    <a class="link link-hover" routerLink="/ui-components">
+      Componentes
+    </a>
+
+    <a class="link link-hover" routerLink="/profile">
+      Perfil
+    </a>
+
+  </nav>
+
+  <nav>
+
+    <h6 class="footer-title">
+      Curso
+    </h6>
+
+    <a class="link link-hover">
+      Layouts responsive
+    </a>
+
+    <a class="link link-hover">
+      Formularios Reactivos
+    </a>
+
+    <a class="link link-hover">
+      Servicios HTTP
+    </a>
+
+  </nav>
 
 </footer>
