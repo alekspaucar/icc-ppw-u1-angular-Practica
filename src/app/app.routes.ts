@@ -25,7 +25,10 @@ export const routes: Routes = [
       import('./features/ui-components/pages/ui-components-page')
         .then(m => m.default),
   },
-
+{
+    path: 'auth',
+    loadComponent: () => import('./features/auth/pages/auth-page/auth-page').then(m => m.AuthPageComponent)
+  },
   // STUDENTS
   {
     path: 'students',

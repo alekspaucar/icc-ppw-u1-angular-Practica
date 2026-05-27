@@ -80,8 +80,20 @@
 
       </ul>
     </div>
+<div class="navbar-end gap-2">
+      @if (currentUser()) {
+        <span class="hidden text-sm font-medium text-base-content/70 lg:block">
+          {{ currentUser()!.email }}
+        </span>
 
-    <div class="navbar-end"></div>
-
+        <button class="btn btn-neutral btn-sm text-white" (click)="logout()">
+          Cerrar sesión
+        </button>
+      } @else {
+        <a class="btn btn-primary btn-sm" routerLink="/auth">
+          Iniciar sesión
+        </a>
+      }
+    </div>
   </div>
 </header>

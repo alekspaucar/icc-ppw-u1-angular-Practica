@@ -1,12 +1,25 @@
-import { Component, signal } from '@angular/core';
-import { RouterLink, RouterLinkActive } from '@angular/router'; // <-- 1. Lo volvemos a importar aquí
+import { Component, inject, signal } from '@angular/core';
+import { Router, RouterLink, RouterLinkActive } from '@angular/router';
+import { AuthService } from '../../core/services/auth.service';
 
 @Component({
   selector: 'app-header',
-  imports: [RouterLink, RouterLinkActive], // <-- 2. Lo agregamos al arreglo
-  templateUrl: './app-header.html',
-  styleUrl: './app-header.css'
+  imports: [RouterLink, RouterLinkActive],
+  templateUrl: './app-header.html'
 })
 export class AppHeaderComponent {
   readonly brand = signal('PPW Angular');
+
+  private authService = inject(AuthService);
+  private router = inject(Router);
+
+  // El signal del servicio: null = no autenticado, User = autenticado.
+  currentUser = this.authService.currentUser;
+
+  logout() {
+    this.authService.logout().subscribe(() => {
+      // Redirige a la pantalla de Auth después de cerrar sesión.
+      this.router.navigate(['/auth']);
+    });
+  }
 }
