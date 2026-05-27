@@ -1,5 +1,6 @@
-<header class="bg-base-100 shadow-sm w-full rounded-md">
+<header class="bg-base-100 shadow-sm w-full rounded-md relative z-50">
   <div class="navbar px-4">
+
     <div class="navbar-start">
       <div class="dropdown">
         <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
@@ -7,38 +8,25 @@
         </div>
         <ul
           tabindex="0"
-          class="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow"
+          class="menu menu-sm dropdown-content bg-base-100 rounded-box z-50 mt-3 w-52 p-2 shadow"
         >
-          <li>
-            <a routerLink="/">Inicio</a>
-          </li>
-          <li>
-            <a routerLink="/ui-components">
-              Componentes
-            </a>
-          </li>
+          <li><a routerLink="/" routerLinkActive="bg-neutral text-white" [routerLinkActiveOptions]="{ exact: true }">Inicio</a></li>
+          <li><a routerLink="/students" routerLinkActive="bg-neutral text-white">Estudiantes</a></li>
+          <li><a routerLink="/layouts" routerLinkActive="bg-neutral text-white">Layouts</a></li>
+
+          <li><a routerLink="/simpsons" routerLinkActive="bg-neutral text-white">Simpsons</a></li>
+
           <li>
             <details>
               <summary>Formularios</summary>
               <ul>
-                <li>
-                  <a routerLink="/signup">
-                    Signup
-                  </a>
-                </li>
-                <li>
-                  <a routerLink="/profile">
-                    Perfil
-                  </a>
-                </li>
-                <li>
-                  <a routerLink="/project-config">
-                    Config Proyecto
-                  </a>
-                </li>
+                <li><a routerLink="/signup" routerLinkActive="bg-neutral text-white">Signup</a></li>
+                <li><a routerLink="/profile" routerLinkActive="bg-neutral text-white">Perfil</a></li>
+                <li><a routerLink="/project-config" routerLinkActive="bg-neutral text-white">Configurar Proyecto</a></li>
               </ul>
             </details>
           </li>
+          <li><a routerLink="/ui-components" routerLinkActive="bg-neutral text-white">UI Components</a></li>
         </ul>
       </div>
       <a class="btn btn-ghost text-xl" routerLink="/">
@@ -47,41 +35,53 @@
     </div>
 
     <div class="navbar-center hidden lg:flex">
-      <ul class="menu menu-horizontal px-1">
+      <ul class="menu menu-horizontal px-1 items-center font-medium gap-1">
+
         <li>
-          <a routerLink="/">Inicio</a>
-        </li>
-        <li>
-          <a routerLink="/ui-components">
-            Componentes
+          <a routerLink="/" routerLinkActive="bg-neutral text-white" [routerLinkActiveOptions]="{ exact: true }">
+            Inicio
           </a>
         </li>
+
+        <li>
+          <a routerLink="/students" routerLinkActive="bg-neutral text-white">
+            Estudiantes
+          </a>
+        </li>
+
+        <li>
+          <a routerLink="/layouts" routerLinkActive="bg-neutral text-white">
+            Layouts
+          </a>
+        </li>
+
+        <li>
+          <a routerLink="/simpsons" routerLinkActive="bg-neutral text-white">
+            Simpsons
+          </a>
+        </li>
+
         <li>
           <details>
-            <summary>
-              Formularios
-            </summary>
-            <ul class="p-2 bg-base-100 rounded-box shadow">
-              <li>
-                <a routerLink="/signup">
-                  Signup
-                </a>
-              </li>
-              <li>
-                <a routerLink="/profile">
-                  Perfil
-                </a>
-              </li>
-              <li>
-                <a routerLink="/project-config">
-                  Configurar Proyecto
-                </a>
-              </li>
+            <summary>Formularios</summary>
+            <ul class="p-2 bg-base-100 rounded-box shadow z-50 w-48 gap-1">
+              <li><a routerLink="/signup" routerLinkActive="bg-neutral text-white">Signup</a></li>
+              <li><a routerLink="/profile" routerLinkActive="bg-neutral text-white">Perfil</a></li>
+              <li><a routerLink="/project-config" routerLinkActive="bg-neutral text-white">Configurar Proyecto</a></li>
             </ul>
           </details>
         </li>
+
+        <li>
+          <a routerLink="/ui-components" routerLinkActive="bg-neutral text-white">
+            UI Components
+          </a>
+        </li>
+
       </ul>
     </div>
+
     <div class="navbar-end"></div>
+
   </div>
 </header>

@@ -8,6 +8,7 @@ import { SingupPage } from './features/singup-page/singup-page';
 
 import ProfilePage from './features/profile/pages/profile-page';
 import ProjectConfigPage from './features/profile/pages/project-config-page';
+import SimpsonsPageComponent from './features/simpsons/pages/simpsons-page';
 
 export const routes: Routes = [
 
@@ -57,7 +58,21 @@ export const routes: Routes = [
     path: 'project-config',
     component: ProjectConfigPage,
   },
+  {
+    path: 'simpsons',
+    component: SimpsonsPageComponent,
+  },
 
+  {
+    path: 'simpsons',
+    loadComponent: () =>
+      import('./features/simpsons/pages/simpsons-page')
+        .then(m => m.default),
+  },
+  {
+    path: 'simpsons/:id',
+    loadComponent: () => import('./features/simpsons/pages/simpson-detail-page/simpson-detail-page').then(m => m.SimpsonDetailPageComponent)
+  },
   // REDIRECT
   {
     path: '**',
