@@ -38,4 +38,8 @@ export class AuthService {
       signOut(this.auth)
     );
   }
+  // Acceso rápido al uid del usuario actual (null si no está autenticado).
+  get uid(): string | null {
+    return this.currentUser()?.uid ?? null;
+  }
 }
