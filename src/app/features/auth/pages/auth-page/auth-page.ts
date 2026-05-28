@@ -6,27 +6,23 @@ import { AuthService } from '../../../../core/services/auth.service';
 @Component({
   selector: 'app-auth-page',
   standalone: true,
-  imports: [ReactiveFormsModule], // Importamos los formularios reactivos
+  imports: [ReactiveFormsModule],
   templateUrl: './auth-page.html',
 })
-export class AuthPageComponent { // O export default class, como estés usando en tus rutas
+export class AuthPageComponent {
   private fb = inject(FormBuilder);
   private authService = inject(AuthService);
   private router = inject(Router);
 
-  // true = mostrar login, false = mostrar registro.
   isLogin = signal(true);
-
   errorMessage = signal<string | null>(null);
   isLoading = signal(false);
 
-  // Un solo formulario sirve para ambos modos.
   authForm = this.fb.group({
     email: ['', [Validators.required, Validators.email]],
     password: ['', [Validators.required, Validators.minLength(6)]],
   });
 
-  // Alterna entre modo login y registro, limpiando errores previos.
   toggleMode() {
     this.isLogin.update((v) => !v);
     this.errorMessage.set(null);
@@ -40,14 +36,12 @@ export class AuthPageComponent { // O export default class, como estés usando e
     this.isLoading.set(true);
     this.errorMessage.set(null);
 
-    // Seleccionamos la acción según el modo activo.
     const action$ = this.isLogin()
       ? this.authService.login(email!, password!)
       : this.authService.register(email!, password!);
 
     action$.subscribe({
       next: () => {
-        // Tanto login como registro navegan a home al completarse con éxito.
         this.router.navigate(['/']);
       },
       error: () => {
@@ -58,6 +52,21 @@ export class AuthPageComponent { // O export default class, como estés usando e
         );
         this.isLoading.set(false);
       },
+    });
+  }
+
+  loginWithGoogle() {
+    this.isLoading.set(true);
+    this.errorMessage.set(null);
+
+    this.authService.loginWithGoogle().subscribe({
+      next: () => {
+        this.router.navigate(['/']);
+      },
+      error: () => {
+        this.errorMessage.set('Error al iniciar sesión con Google.');
+        this.isLoading.set(false);
+      }
     });
   }
 }

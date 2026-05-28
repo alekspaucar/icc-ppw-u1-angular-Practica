@@ -7,7 +7,9 @@ import {
   authState,
   signInWithEmailAndPassword,
   createUserWithEmailAndPassword,
-  signOut
+  signOut,
+  GoogleAuthProvider,
+  signInWithPopup
 } from '@angular/fire/auth';
 
 import { from } from 'rxjs';
@@ -31,6 +33,11 @@ export class AuthService {
     return from(
       createUserWithEmailAndPassword(this.auth, email, password)
     );
+  }
+
+  loginWithGoogle() {
+    const provider = new GoogleAuthProvider();
+    return from(signInWithPopup(this.auth, provider));
   }
 
   logout() {
